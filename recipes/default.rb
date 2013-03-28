@@ -95,7 +95,7 @@ end
 # Blowfish Secret
 unless node[:phpmyadmin][:blowfish_secret]
   node.set['phpmyadmin']['blowfish_secret'] = Digest::SHA1.hexdigest(IO.read('/dev/urandom', 2048))
-  node.save
+  #node.save
 end
 
 template "#{home}/config.inc.php" do
